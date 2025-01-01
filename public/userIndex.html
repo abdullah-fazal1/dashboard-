@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marksheet Lookup</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+
+    <div class="container mt-5">
+
+        <h1 class="text-center">Find Your Marksheet</h1>
+
+
+
+        <div class="form-group text-center">
+            <input type="text" class="form-control w-50 mx-auto" id="cnic" placeholder="Enter CNIC" required>
+        </div>
+        <div class="text-center">
+            <button onclick="renderStudentList()" class="btn btn-primary">Search</button>
+        </div>
+
+
+
+
+        <h2 class="text-center">Your Marksheet</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>CNIC</th>
+                        <th>Course</th>
+                        <th>Marks</th>
+                        <th>Total Marks</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody id="marksheet">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <a href="./updateProfile.html">
+                <button type="submit" class="btn btn-warning">Update Profile</button>
+            </a>
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="./js/userIndex.js"></script>
+</body>
+
+</html>

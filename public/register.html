@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Student Portal</title>
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/random/1920x1080/?school,education');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            /* Dark overlay for better contrast */
+        }
+        
+        .form-container {
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen overlay">
+
+    <div class="form-container bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-bold text-gray-800">Student Marksheet Portal</h2>
+            <p class="text-gray-600 mb-4">Enter your CNIC number to retrieve your marksheet.</p>
+            <i class="fas fa-user-graduate text-5xl text-gray-800"></i>
+        </div>
+        <form class="mt-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-semibold mb-2" for="cnic">
+                    CNIC Number
+                </label>
+                <input type="text" id="cnic" class="shadow appearance-none border border-gray-300 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-gray-800" placeholder="Enter your CNIC number" required />
+            </div>
+            <button type="submit" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 rounded transition duration-200 ease-in-out flex items-center justify-center">
+                <i class="fas fa-search mr-2"></i> Search Marksheet
+            </button>
+        </form>
+        <div id="result" class="mt-4 text-gray-700 text-center"></div>
+        <div class="mt-6">
+            <p class="text-gray-500 text-sm text-center">© 2024 Student Portal. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const cnic = document.getElementById('cnic').value;
+
+            document.getElementById('result').innerText = `Searching for marksheet for CNIC: ${cnic}...`;
+
+            setTimeout(() => {
+                document.getElementById('result').innerText = `Marks for CNIC ${cnic}: 85% (A)`;
+            }, 1500);
+        });
+    </script>
+
+</body>
+
+</html>
